@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
   resources :users
+  resources :posts
+
+  # Here we add match case so whenever user register on our url bar it will go to users new action
+  match '/register' => 'users#new', via: [:get, :post]
+
+  root 'posts#index'
+
+  get 'sessions/new'
 
   get 'users/index'
 

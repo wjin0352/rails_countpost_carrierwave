@@ -1,0 +1,53 @@
+<h3>Photo Posts</h3><br/>
+
+<h5>Total Photo Posts
+<!--prints total post count-->
+<%= @countPost[0][0] %>
+
+</h5>
+
+<div class="CSSTableGenerator">
+  <table cellspacing="2" cellpadding="2" align="middle">
+    <tr>
+      <td>Title</td>
+      <td>Image</td>
+      <td>Body</td>
+      <td colspan="3"></td>
+    </tr>
+    <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= image_tag post.avatar_url(:thumb)%></td>
+      <td><%= link_to 'Show', post %></td>
+      <td><%= link_to 'Edit', edit_post_path(post) %></td>
+      <td><%= link_to 'Destroy', post, method: :delete, data: {confirm: "are you sure? "}%></td>
+    </tr>
+    <%end%>
+  </table>
+</div>
+<br><br>
+<center><%= link_to 'New Post', new_post_path %></center>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
