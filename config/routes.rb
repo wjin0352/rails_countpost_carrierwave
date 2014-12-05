@@ -1,19 +1,12 @@
 Rails.application.routes.draw do
-  resources :users
   resources :posts
 
   # Here we add match case so whenever user register on our url bar it will go to users new action
-  match '/register' => 'users#new', via: [:get, :post]
+  # match '/register' => 'users#new', via: [:get, :post]
 
   root 'posts#index'
 
-  get 'sessions/new'
 
-  get 'users/index'
-
-  get 'users/show'
-
-  get 'users/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
